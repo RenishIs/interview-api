@@ -8,12 +8,10 @@ dotenv.config({
     path: path.resolve(__dirname, `../env/${process.env.NODE_ENV}.env`)
 });
 
+
 const db_connection = () => {
-    mongoose.connect(`${process.env.HOST}${process.env.DATABASE}`,
-        {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        },
+    mongoose.connect(process.env.HOST + process.env.DATABASE,
+        { useNewUrlParser: true, useUnifiedTopology: true },
         (err) => {
             if (err) console.log(err);
             else console.log("db connection success");
