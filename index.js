@@ -46,7 +46,7 @@ socket.init(server);
 /* Express Custom Function */
 require("./common/express_custom_function")(express);
 
-server.listen(config.port, (err) => {
+server.listen(3005, (err) => {
     if (err) throw (err);
     console.log('Server Up And Working');
 });
